@@ -3,11 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hola</title>
+  <title>Mi tarjeta</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Hola</h1>
-  <p>Soy estudiante web.</p>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+    <span class="theme-toggle__icon">🌙</span>
+    <span class="theme-toggle__text">Modo oscuro</span>
+  </button>
+
+  <main class="card">
+    <div class="card__avatar" aria-hidden="true">K</div>
+    <h1 class="card__name">kevin Poyon</h1>
+    <p class="card__role">Estudiante de desarrollo web</p>
+
+    <h2 class="card__subtitle">Mis hobbies</h2>
+    <ul class="card__hobbies">
+      <li>🥾 Senderismo</li>
+      <li>💻 Programar</li>
+    </ul>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

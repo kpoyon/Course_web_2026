@@ -1,24 +1,125 @@
+/* Variables de color: tema claro por defecto */
+:root {
+  --bg: #f4f6fb;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --text-soft: #4b5563;
+  --accent: #2563eb;
+  --border: #e5e7eb;
+  --shadow: rgba(15, 23, 42, 0.12);
+}
+
+/* Tema oscuro: se activa con el atributo data-theme en <html> */
+html[data-theme="dark"] {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f1f5f9;
+  --text-soft: #94a3b8;
+  --accent: #60a5fa;
+  --border: #334155;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 2rem 1rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
   font-family: system-ui, sans-serif;
-  background-color: #f4f6fb;
-  color: #1f2937;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background-color: var(--card-bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.15s;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background-color: var(--card-bg);
+  box-shadow: 0 10px 30px var(--shadow);
   text-align: center;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-h1 {
-  margin: 0 0 0.5rem;
-  font-size: 3rem;
-  color: #2563eb;
+.card__avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-p {
+.card__name {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+  color: var(--accent);
+}
+
+.card__role {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  color: var(--text-soft);
+}
+
+.card__subtitle {
+  margin: 0 0 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+}
+
+.card__hobbies {
   margin: 0;
-  font-size: 1.25rem;
-  color: #4b5563;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card__hobbies li {
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  background-color: var(--bg);
+  text-align: left;
+  font-size: 0.95rem;
+  transition: background-color 0.3s;
 }
